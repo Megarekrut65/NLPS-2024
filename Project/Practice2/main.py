@@ -1,5 +1,10 @@
 import stanza
-from data import text
+
+try:
+     with open("text.txt") as file:
+         text = file.read()
+except:
+    text = ""
 
 stanza.download("uk")
 def main():
