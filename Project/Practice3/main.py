@@ -77,12 +77,12 @@ def create_words_from_texts():
     folder = input("Enter folder with texts: ")
     text = read_all(folder)
     words = get_lemmas(text)
-    save_tsv("result/raw_words.tsv", sort_by_count(words))
+    save_tsv("result/raw_words.txt", sort_by_count(words))
 
     words = remove_stop_words(words)
     sorted_words = sort_by_count(words)
-    save_tsv("result/words.tsv", sorted_words)
-    save_tsv("result/frequent_words.tsv", [word.word for word in sorted_words[:100]])
+    save_tsv("result/words.txt", sorted_words)
+    save_tsv("result/frequent_words.txt", [word.word for word in sorted_words[:100]])
 
     print("Result saved in result folder")
 
